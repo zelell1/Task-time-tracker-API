@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/taskdb
+    driver-class-name: org.postgresql.Driver
+    username: taskuser
+    password: taskpass
+  sql:
+    init:
+      mode: always
+
+mybatis:
+  type-handlers-package: ru.task_api.infrastructure.config
+  configuration:
+    map-underscore-to-camel-case: true
+    default-enum-type-handler: org.apache.ibatis.type.EnumTypeHandler
+    jdbc-type-for-null: NULL
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000
